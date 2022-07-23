@@ -1,8 +1,6 @@
 import Head from "next/head";
-import dynamic from "next/dynamic";
 import "../i18n";
 import { useTranslation } from "react-i18next";
-import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -12,13 +10,14 @@ export default function Home() {
   useEffect(() => {
     setDomLoaded(true);
   }, []);
+  
   const changeLanguage = (e) => {
     i18n.changeLanguage(e.target.value);
   };
   return (
     <>
       {domLoaded && (
-      <div className={styles.container}>
+      <div class='container'>
         <Head>
           <title>{t("head")}</title>
           <link rel="icon" href="/favicon.ico" />
